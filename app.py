@@ -59,7 +59,7 @@ input_features = [
         st.selectbox("Qual o nível de escolaridade da vítima?", df['escolaridade'].unique()),
         ]
 
-if st.button("Processar"):
+if st.button("Prever"):
     input_df = pd.DataFrame([input_features], columns=df.columns.drop('qtdRegAnt'))
     input_encoded = encoder.transform(input_df)
     predict_encoded = modelo.predict(input_encoded)
