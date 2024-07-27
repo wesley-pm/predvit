@@ -63,7 +63,7 @@ if st.button("Prever"):
 
 st.header("Ficha técnica do modelo")
 df1 = pd.DataFrame(
-    data = [[round({acuracia},{precisao},{revocacao},{f_score},{auc})]],
+    data = [[{acuracia},{precisao},{revocacao},{f_score},{auc}]],
     columns=['Acurácia','Precisão','Revocação','F1_score','AUC'],
 
 )
