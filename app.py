@@ -45,11 +45,6 @@ def load_data_and_model():
 encoder, modelo, df, acuracia, precisao, revocacao, f_score, auc = load_data_and_model()
 
 st.title("Previsão de Reincidência como Vítima em Ocorrência de Violência Doméstica")
-st.write(f"Acurácia: {acuracia:.2f}")
-st.write(f"Precisão: {precisao:.2f}")
-st.write(f"Revocação: {revocacao:.2f}")
-st.write(f"F1_score: {f_score:.2f}")
-st.write(f"AUC: {auc:.2f}")
 
 input_features = [
         st.selectbox("A vítima possui filhos com o autor?", df['filhosJuntos'].unique()),
@@ -66,3 +61,10 @@ if st.button("Prever"):
     previsao = df['qtdRegAnt'].astype('category').cat.categories[predict_encoded][0]
     st.header(f"Resultado da previsão: {previsao}")
 
+st.header("Ficha técnica do modelo")
+df1 = pd.DataFrame(
+    data = [[{acuracia:.2f},{precisao:.2f},{revocacao:.2f},{f_score:.2f},{auc:.2f}]],
+    columns=['Acurácia','Precisão','Revocação','F1_score','AUC'],
+
+)
+st.dataframe(df1,hide_index=True)
