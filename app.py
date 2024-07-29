@@ -15,7 +15,7 @@ st.set_page_config(
 )
 
 def load_data_and_model():
-    df = pd.read_csv("vitimas.csv", sep=";")
+    df = pd.read_excel("vitimas.xlsx")
     encoder = OrdinalEncoder()
 
     for col in df.columns.drop('qtdRegAnt'):
