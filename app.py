@@ -8,6 +8,7 @@ from sklearn.metrics import recall_score
 from sklearn.metrics import f1_score
 from sklearn.metrics import roc_auc_score
 from sklearn.linear_model import LogisticRegression
+import openpyxl
 
 st.set_page_config(
     page_title="AppPredvit",
