@@ -64,8 +64,8 @@ if st.button("Prever"):
 
 st.header("Ficha técnica do modelo")
 df1 = pd.DataFrame(
-    data = [[{acuracia},{precisao},{revocacao},{f_score},{auc}]],
-    columns=['Acurácia','Precisão','Revocação','F1_score','AUC'],
+    data = [['Logistic Regression',{acuracia},{precisao},{revocacao},{f_score},{auc}]],
+    columns=['Algoritmo','Acurácia','Precisão','Revocação','F1_score','AUC'],
 
 )
 st.dataframe(df1,hide_index=True)
